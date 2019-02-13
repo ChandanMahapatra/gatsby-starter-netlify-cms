@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import CalciteThemeProvider from "../../node_modules/calcite-react/CalciteThemeProvider"
+import Button from '../../node_modules/calcite-react/Button'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
@@ -14,6 +16,9 @@ export default class IndexPage extends React.Component {
           <div className="container">
             <div className="content">
               <h1 className="has-text-weight-bold is-size-2">Some Stories</h1>
+                <CalciteThemeProvider>
+                  <Button onClick={() => console.log('clicked')}>A Calcite Button!</Button>
+                </CalciteThemeProvider>              
             </div>
             {posts
               .map(({ node: post }) => (
